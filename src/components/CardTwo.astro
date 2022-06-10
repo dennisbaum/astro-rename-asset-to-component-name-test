@@ -1,0 +1,27 @@
+---
+export interface Props {
+	text: string
+}
+const { text} = Astro.props;
+---
+
+<div class="link-card-two">
+	<p>CardTwo: {text}</p>
+	<button class="btn-card-two">btn-card-two</button>
+</div>
+
+<script>
+	const buttons = document.querySelectorAll('.btn-card-two');
+	buttons.forEach(function (button) {
+		button.addEventListener('click', (e) => {
+			console.log('btn-card-two.click');
+		});
+	});
+</script>
+
+
+<style is:global>
+	.link-card-two {
+		color: green;
+	}
+</style>
